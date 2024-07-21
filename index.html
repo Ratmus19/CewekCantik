@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cewek Cantik</title>
+<style>
+  .slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .slide {
+    display: none;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 0 3px 3px 0;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+  <div class="slide fade">
+    <img src="https://raw.githubusercontent.com/Ratmus19/Fotodela/main/potodela1.jpg" style="width:100%">
+  </div>
+  <div class="slide fade">
+    <img src="https://raw.githubusercontent.com/Ratmus19/Fotodela/main/potodela2.jpg" style="width:100%">
+  </div>
+  <div class="slide fade">
+    <img src="https://raw.githubusercontent.com/Ratmus19/Fotodela/main/potodela3.jpg" style="width:100%">
+  </div>
+  <div class="slide fade">
+    <img src="https://raw.githubusercontent.com/Ratmus19/Fotodela/main/potodela4.jpg" style="width:100%">
+  </div>
+  <div class="slide fade">
+    <img src="https://raw.githubusercontent.com/Ratmus19/Fotodela/main/potodela5.jpg" style="width:100%">
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+  }
+</script>
+</body>
+</html>
